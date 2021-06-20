@@ -29,8 +29,10 @@ function checker(){
             var end = new Date().getTime();
             var time = end - start ;
             time = time - timeOut;
-            if(event.key === pressKey){
-                document.getElementById("sucess").innerHTML = "You pressed the key in "+ time + " milliseconds.";      
+            if(event.key == pressKey){
+                document.getElementById("sucess").innerHTML = "You pressed the key in "+ time + " milliseconds.";    
+                pressKey = "" 
+                document.getElementById("item").innerHTML = pressKey;
             }
         });
      }, timeOut);
@@ -41,7 +43,7 @@ document.getElementById("btn").addEventListener("click", function(){
     document.getElementById("again").innerHTML = '( If You Want To Try It Out Again Press The Start Button Again )';
     document.getElementById("wait").innerHTML = 'The key you have to press will be appearing automatically';
     document.getElementById("sucess").innerHTML = '';
-    document.getElementById("item").innerHTML = '';
+    
     start = new Date().getTime();
     checker();
     
